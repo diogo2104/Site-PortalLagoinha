@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Portal Lagoinha</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="mobile.css" media="(max-width: 600px)">
+  <link rel="icon" href="img/Logo base.PNG" type="image/png">
+</head>
+<body>
+<div class="circle-logo"></div>
+<div class="container" id="container">
+
+  <!-- LOGIN -->
+  <div class="form-container sign-in">
+    <form action="login.php" method="POST">
+      <h2>Login</h2>
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <!-- CADASTRO -->
+  <div class="form-container sign-up">
+    <form onsubmit="return false;">
+      <h2>Cadastro</h2>
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="email" name="email" placeholder="Email">
+      <input type="password" name="password" placeholder="Senha" required>
+      <button type="button" onclick="alert('Registro ainda não está funcionando.')">Registrar</button>
+    </form>
+  </div>
+
+  <!-- PAINEL DESLIZANTE -->
+  <div class="toggle-container">
+    <div class="toggle">
+
+      <div class="toggle-panel toggle-left">
+        <h2>Já tem conta?</h2>
+        <button id="loginBtn">Login</button>
+      </div>
+
+      <div class="toggle-panel toggle-right">
+        <h2>Não tem conta?</h2>
+        <button id="registerBtn">Registrar</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const container = document.getElementById("container");
+  const registerBtn = document.getElementById("registerBtn");
+  const loginBtn = document.getElementById("loginBtn");
+
+  registerBtn.addEventListener("click", () => {
+    container.classList.add("active");
+  });
+
+  loginBtn.addEventListener("click", () => {
+    container.classList.remove("active");
+  });
+</script>
+
+</body>
+</html>

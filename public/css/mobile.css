@@ -1,0 +1,403 @@
+/*Estilos para dispositivos móveis*/
+@media (max-width: 768px) {
+    .uper-range {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 29rem;
+    }
+    .login-circle {
+        position: absolute;
+        height: 4.5rem;
+        width: 4.5rem ;
+        top:13.2rem;
+        left: 2%;
+        z-index: 100;
+    }
+    .admin{
+     right: 1rem;
+     top: 7rem;
+    }
+    .wave {
+        margin-top: 14rem;
+    }
+    .center-logo {
+        position: relative;
+        top: -22rem;
+        left: 23%;
+        z-index: 999;
+        width: 54%;
+        height: 28%;
+        border-radius: 0.5rem;
+    }
+    .title-uper {
+        position: relative;
+        top: -29.5rem;
+        left: 3%;
+        z-index: 999;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #000000;
+        font-family: "Outfit", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        transition: all ease-in-out 0.8s;
+        
+    }
+    
+    .access-options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -29.5rem;
+        font-size: 0.3rem;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+    }
+    .access-options a {
+        flex: 1 1 30%;
+        min-width: 90px;
+        text-align: center;
+        margin-bottom: 0.2rem;
+    }
+    .access-options a:nth-child(1),
+    .access-options a:nth-child(2),
+    .access-options a:nth-child(3) {
+        order: 1;
+    }
+    .access-options a:nth-child(4),
+    .access-options a:nth-child(5) {
+        order: 2;
+        flex-basis: 45%;
+    }
+   .title-blog {
+        margin-top: -18rem;
+        margin-bottom: 17rem;
+    }
+    .frame-post {
+        position: absolute;
+        width: 90%;
+        left: 4%;
+        height: auto; /* permite altura conforme conteúdo */
+        object-fit: cover;
+        margin: 0 auto;
+        display: block;
+        margin-top: -14.5rem; /* sobe o quadro mais */
+        padding-top: 1.2rem; /* evita que o conteúdo seja cortado */
+        min-height: 15rem; /* garante espaço mínimo visível */
+        z-index: 5;
+        box-sizing: border-box;
+        margin-bottom: 6rem;
+    }
+
+
+.post1, .post2 {
+    position: absolute;
+    z-index: 10;
+    left: 1rem;
+    color: #0057b7;
+    padding: 0.35rem 0.6rem;
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+}
+
+.post1 {
+    top: 3.4rem;
+    font-size: 1.1rem;
+}
+.post2 {
+    top: 1rem;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+    /*Seção contato*/
+    
+    .uper-mobilecontato {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 101%;
+        height: 8rem;
+        background-color:white;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .img-contatomobile {
+        width: 7.5rem;
+        height: 7.5rem;
+        border-radius: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    .circle-logocontato, .icon .reflection {
+        display: none;
+    }
+    .logo-contato {
+        position: relative;
+        left: 0;
+        z-index: 999;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 0.5rem;
+        display: none;
+    }
+    .text-contato1, .text-contato2, .text-contato3, .text-contato4 {
+        position: absolute;
+        left: 67%;
+        top: 1.7rem;
+        transform: translateX(-50%);
+        margin: 0 auto;
+        color: #222;
+        font-family: "Roboto Slab", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: opacity 1s ease;
+        pointer-events: none;
+        width: 100%;
+        max-width: 240px;
+        text-align: center;
+        min-height: 2.5em;
+        height: 2.5em;
+        display: block;
+        z-index: 10;
+        
+    }
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+   .icon.icon.instagram {
+    margin-top: -3rem;
+   }
+   .icon.whatsapp {
+    margin-bottom: 12rem;
+   }
+    .btn-voltar{
+        position: absolute;
+        top: 58%;
+        left: 80%;
+        color: black;
+        font-size: 1.2rem;
+        cursor: pointer;
+        font-family: "Outfit", sans-serif;
+        border: none;
+    }
+    .wavesvg {
+        position: absolute;
+        bottom: -13rem;
+
+    }
+
+    /*Area sobre*/
+    .container-sobre {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 250%;
+        background-color: rgb(229, 223, 223);
+        background: linear-gradient(270deg, #ffffff, rgb(229, 223, 223), #b5a9a9, #bebdbd);
+        background-size: 800% 800%;
+        animation: fundoAnimado 16s ease-in-out infinite;
+        opacity: 100%;
+        padding-bottom: 8rem; 
+    }
+    .uper-sobre {
+        position: relative;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 10.5rem;
+        background-color:transparent;
+        border: none;
+        background: linear-gradient(270deg, rgb(249, 96, 96), rgb(235, 53, 53), #42982e, #164aad);
+        background-size: 800% 800%;
+        animation: aguaAnimada 12s ease-in-out infinite;
+        opacity: 8.5%;
+    }
+    .circle-logosobre {
+        position: relative;
+        top: -9.8rem; 
+        left: 35%;
+        z-index: 999;
+        width: 6.5rem;
+        height: 6.5rem;
+        border-radius: 50%;
+        background-color: white;
+        border: 0.2rem solid red    ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-sobre {
+        position: relative;
+        left: 0;
+        z-index: 999;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 0.5rem;
+    }
+    .sbr-title {
+        position: relative;
+        top:-10.5rem;
+        left: 19%;
+        color: #272727;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Outfit", sans-serif;
+    }
+    .text-sobre {
+        position: relative;
+        top: -9rem;
+        left: 0;
+        font-size: 0.5rem;
+       font-family: "Arimo", sans-serif;
+       word-break: break-word;
+       white-space: normal;
+        max-width: 20rem;
+       margin: 0 auto;
+        display: block;
+    }
+    .title-profile1 {
+        position: relative;
+        top: -7rem;
+        left: 25%;
+        color: #222;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Outfit", sans-serif;
+        margin-bottom: 1rem;
+    }
+    .profile-frame1 {
+        position: relative;
+        top: -7rem;
+        left: 17.5%;
+        width: 65%;
+        height: 18rem;
+        background-color: white;
+        margin-bottom: 2rem;
+        border-radius: 0.5rem;
+        border: solid 0.2rem black ;
+    }
+    .subtitle-profile1 {
+        display: none;
+    }
+    .title-profile2 {
+        position: relative;
+        top: 8rem;
+        left: 25%;
+        color: #222;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Outfit", sans-serif;
+        margin-bottom: 1rem;
+    }
+    .profile-frame2 {
+        position: relative;
+        top: 8rem;
+        left: 17.5%;
+        width: 65%;
+        height: 18rem;
+        background-color: white;
+        margin-bottom: 2rem;
+        border-radius: 0.5rem;
+        border: solid 0.2rem black ;
+    }
+    .subtitle-profile2 {
+        display: none;
+    }
+    .title-profile3 {
+        position: relative;
+        top: 23rem;
+        left: 25%;
+        color: #222;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Outfit", sans-serif;
+        
+    }
+    .profile-frame3 {
+        position: relative;
+        top: 23rem;
+        left: 17.5%;
+        width: 65%;
+        height: 18rem;
+        background-color: white;
+        margin-bottom: 40rem;
+        border-radius: 0.5rem;
+        border: solid 0.2rem black ;
+    }
+    .subtitle-profile3 {
+        display: none;
+    }
+    .wave-sobresvg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 8rem; 
+        z-index: 0;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+    }
+    .btn-voltarsobre {
+        position: absolute;
+        top: 1.5rem;
+        left: 80%;
+        color: black;
+        font-size: 1.2rem;
+        cursor: pointer;
+        font-family: "Outfit", sans-serif;
+        border: none;
+    }
+
+    /*area eventos*/
+
+.circle-logoeventos,.icon .reflection ,#img-relson,.btn-voltareventos {
+    display: none;
+}
+.title-eventos {
+    position: relative;
+    top: 2rem;
+    left:7%;
+    color: #222;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+    margin-bottom: 1rem;
+}
+.frame-option {
+    width: 90%;
+    margin-top: 55%;
+    margin-left: -10%;
+}
+.page-login, .button-lgn, .register, .btn-login{
+    display: none;}
+
+
+
+
+
+
+
+
+
+
+   }

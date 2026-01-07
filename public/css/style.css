@@ -1,0 +1,995 @@
+html,body {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(229, 223, 223);
+}
+/*Container do inicio*/
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: rgb(229, 223, 223);
+    z-index: 1;
+    
+}
+.title-uper {
+    position: absolute;
+    top: 2%;
+    left: 23%;
+    z-index: 999;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    transition: all ease-in-out 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: titleColorCycle 12s ease-in-out infinite alternate;
+    will-change: color;
+}
+
+.title-uper:hover {
+    color: red;
+    text-shadow: 4px 4px 8px #000000;
+    transform: scale(1.05);
+}
+
+@keyframes titleColorCycle {
+  0%   { color: #ffffff; }
+  100% { color: #ff0000; }
+}
+
+.login-circle {
+    position: fixed;
+    top: 2.5rem;
+    right: 2.2rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: white;
+    background-image: url("../img/Logo%20base.PNG");
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 50%;
+    border: 0.2rem solid red;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+.login-circle:hover {
+    transform: scale(1.1);
+}
+.admin{
+    position: fixed;
+    top: 2.9rem;
+    right: 2.5rem;
+    width: 12rem;
+    height: 16rem;
+    background-color: transparent;
+    z-index: 1000;
+    border: none;
+    display: none;
+}
+
+/* quando o body receber a classe is-admin, mostrar o painel admin */
+.is-admin .admin {
+    display: block !important;
+}
+
+/* esconder botão de login quando o usuário estiver logado */
+.is-admin .login-circle {
+    display: none !important;
+}
+.popup-adm{
+    position: absolute;
+    top: 8.5rem;
+    left: 5%;
+    width: 90%;
+    height: 10rem;
+    background-color: white;
+    border: solid 0.15rem red;
+    border-radius: 0.3rem;
+    z-index: 1001;
+    /* hidden by default; become visible when `.show` is added */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;}
+
+.popup-adm.show{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.acess-adm{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 5rem;
+    background-color: transparent;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    background-image: url(../img/login.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+}
+.pop-usuario{
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: 90%;
+    height: 2.3rem;
+    background-color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    border: solid 0.1rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*botoes de acess adm */
+.btn-dados {
+    position: relative;
+    width: 8rem;
+    height: 2rem;
+    top: 4.4rem;
+    left: 10%;
+    background-color: white;
+    border-radius: 0.1rem;
+    border: solid 0.1rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.btn-exit {
+position: relative;
+    top: 5rem;
+    width: 8rem;
+    height: 2rem;
+    left: 10%;
+    background-color: white;
+    border-radius: 0.1rem;
+    border: solid 0.1rem black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+
+
+
+.access-options {
+    display: flex;
+    gap: 2rem;
+    left: 25%;
+    top: 15.5%;
+    position: absolute;
+}
+.access-options a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    font-weight: bold;
+    transition: all ease-in-out 0.8s;
+    font-size: 1.9rem;
+    animation: accessColorCycle 10s linear infinite;
+}
+.access-options a:hover {
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+    transform: scale(1.05);
+}
+.access-options a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.2rem;
+    background-color: currentColor;
+    border-radius: 0.5rem;
+    bottom: -0.3rem;
+    left: 0;
+    box-shadow: 2px 2px 4px #000000;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+    z-index: 2;
+    /* ...existing code... */
+}
+.access-options a:hover::after {
+    width: 100%;
+}
+
+.uper-range {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 29rem;
+    width: 100%;
+}
+.center-logo {
+    position: relative;
+    top: -16.2rem; /* Ajuste conforme necessário para subir a logo */
+    left: 36.5%;
+    z-index: 999;
+    width: 27%;
+    height: 55%;
+    border-radius: 0.5rem;
+}
+/*Titulo e Blog*/
+.title-blog {
+    display: block;
+    margin: 24px auto 0 auto;
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 2.1rem;
+    color: #222;
+    position: static;
+    margin-top: -13rem;
+    border: none;
+}
+
+.title-blog + * {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    height: auto;
+}
+
+.frame-post {
+    position: relative;
+    width: 80%;
+    height: 40%;
+    min-height: 40rem;
+    margin-left: 10%;
+    margin-top: 4rem;
+    border: solid 0.2rem black;
+    border-radius: 0.4rem;
+    background-color: white;
+    margin-bottom: 3rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.post1{
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.4rem;
+    top: 4rem;
+    left: 0.9rem;
+    color: #0057b7; /* cor padrão */
+    text-decoration: none;
+    transition: color 0.18s ease, transform 0.12s ease, text-decoration-color 0.18s ease;
+}
+
+.post1:hover,
+.post1:focus {
+    color: #d71c1c; /* cor ao passar o mouse */
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transform: translateY(-2px);
+}
+
+.post1:active {
+    transform: translateY(0);
+}
+
+.post2{
+    position: relative;
+    font-family: "Outfit", sans-serif;
+    font-size: 1.4rem;
+    top: 1rem;
+    left: -30%;
+    color: #0057b7; /* cor padrão */
+    text-decoration: none;
+    transition: color 0.18s ease, transform 0.12s ease, text-decoration-color 0.18s ease;
+}
+
+.post2:hover,
+.post2:focus {
+    color: #d71c1c; /* cor ao passar o mouse */
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transform: translateY(-2px);
+}
+
+.post2:active {
+    transform: translateY(0);
+}
+
+
+
+/*Container CONTAT0*/
+
+.uper-contato {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 99.2%;
+    height: 14rem;
+    background-color:transparent;
+    border: none;
+}
+.circle-logocontato {
+    position: relative;
+    top: 6%; 
+    left: 2%;
+    z-index: 999;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 0.2rem solid red    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-contato {
+    position: relative;
+    left: 0;
+    z-index: 999;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 0.5rem;
+}
+/*Titulos temporarios da pagina contato */
+
+.text-contato1, .text-contato2, .text-contato3, .text-contato4 {
+    position: absolute;
+    left: 53%;
+    top: 5.5rem;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    color: #222;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.3rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    min-height: 2.5em;
+    height: 2.5em;
+    display: block;
+    z-index: 10;
+}
+
+.container-contato {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: rgb(233, 230, 230);
+    width: 100%;
+    
+    min-height: 100vh; /* altura mínima de tela cheia */
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 4rem; /* ajuste para garantir espaço, mas não exagere */
+}
+.contato-visible {
+    opacity: 1 !important;
+    pointer-events: auto;
+    z-index: 10;
+}
+.btn-voltar {
+    position: absolute;
+    top: 1.5rem;
+    left: 90%;
+    color: black;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    border: none;
+}
+/*Icones de acesso de conatos */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7%;
+  gap: 12rem;
+  padding: 4rem;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon i {
+    font-size: 8rem;
+  color: var(--color);
+  transition: 0.3s ease;
+}
+
+/* Reflexo */
+.icon .reflection {
+  position: absolute;
+  top: 105%;
+  transform: scaleY(-1);
+  opacity: 0.7;
+  filter: blur(2px);
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+/* Efeito hover (brilho) */
+.icon:hover i:first-child {
+  color: white;
+  background-color: var(--color);
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px var(--color),
+    0 0 20px var(--color),
+    0 0 40px var(--color),
+    0 0 80px var(--color);
+}
+.icon.facebook:hover i:first-child {
+  background-color: #0f2ac0;
+}
+
+@keyframes accessColorCycle {
+    0%   { color: #ff4d4d; }
+    33%  { color: #0f2ac0; }
+    66%  { color: #17ba25; }
+ 100%  { color: #ff4d4d; }
+}
+.icon.youtube:hover i:first-child {
+    background-color: #ff0000;
+}
+/* Cores individuais */
+.icon.youtube { --color: #ff0000; }
+.icon.instagram { --color: #e4405f; }
+.icon.facebook { --color: #0f2ac0; }
+.icon.whatsapp { --color: #25d366; }
+
+.uper-mobilecontato{
+    display: none;
+}
+
+.wave {
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 22rem;
+    background: red;
+    opacity: 0.7;
+    border-radius: 100%;
+    animation: wave 8s infinite linear;
+    transform-origin: center;
+    z-index: 0; 
+}
+
+
+
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-25%) translateY(15px) rotate(1deg);
+    }
+    100% {
+      transform: translateX(0) translateY(0) rotate(0deg);
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+  }
+  .wavesvg {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 320px;
+                z-index: 0;
+                pointer-events: none;
+                margin: 0;
+                padding: 0;
+            }
+            .wavesvg img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: relative;
+                }
+                
+            
+        
+    
+
+/*Container da pagina sobre*/
+
+
+
+.container-sobre {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(244, 238, 238);
+    background: linear-gradient(270deg, #ffffff, rgb(229, 223, 223), #cec9c9, #bebdbd);
+    background-size: 800% 800%;
+    animation: fundoAnimado 16s ease-in-out infinite;
+    opacity: 100%;
+    
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+@keyframes fundoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.uper-sobre {
+    
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 14rem;
+    background-color:transparent;
+    border: none;
+    background: linear-gradient(270deg, rgb(208, 208, 214), rgb(185, 81, 81), #42982e, #164aad);
+    background-size: 800% 800%;
+    animation: aguaAnimada 12s ease-in-out infinite;
+    opacity: 8.5%;
+}
+@keyframes aguaAnimada {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.circle-logosobre {
+    position: relative;
+    top: -13rem; 
+    left: 2%;
+    z-index: 999;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 0.2rem solid red    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-sobre {
+    position: relative;
+    left: 0;
+    z-index: 999;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 0.5rem;
+}
+
+
+
+/*Titulo da pagina sobre*/
+.sbr-title {
+    position: relative;
+    top:-23.5rem;
+    left: 33%;
+    color: #272727;
+    font-size: 2.9rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+}
+/*texto do sobre */
+.text-sobre {
+    position: relative;
+    top: -18rem;
+    left: 0;
+    font-size: 0.75rem;
+   font-family: "Arimo", sans-serif;
+   word-break: break-word;
+   white-space: normal;
+    max-width: 68.5rem;
+   margin: 0 auto;
+    display: block;
+}
+
+/*Perfil das pessoas*/
+/*Pessoa  1*/
+.title-profile1 {
+    position: relative;
+    top: -15rem;
+    left: 5%;
+    color: #222;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+    margin-bottom: 1rem;
+}
+.profile-frame1 {
+    position: relative;
+    top: -15rem;
+    left: 5%;
+    width: 25%;
+    height: 35rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    border: solid 0.2rem black ;
+}
+
+
+/*Pessoa  2*/
+.title-profile2 {
+    position: relative;
+    top: -15rem;
+    left: 65%;
+    color: #222;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+    margin-bottom: 1rem;
+}
+.profile-frame2 {
+    position: relative;
+    top: -15rem;
+    left: 65%;
+    width: 25%;
+    height: 35rem;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    border: solid 0.2rem black ;
+}
+.subtitle-profile2 {
+    display: none;
+}
+
+
+
+/* Pessoa 3 */
+
+.title-profile3 {
+    position: relative;
+    top: -15rem;
+    left: 5%;
+    color: #222;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+    margin-bottom: 1rem;
+}
+.profile-frame3 {
+    position: relative;
+    top: -15rem;
+    left: 5%;
+    width: 25%;
+    height: 35rem;
+    background-color: white;
+    margin-bottom: -10rem;
+    border-radius: 0.5rem;
+    border: solid 0.2rem black ;
+}
+
+.subtitle-profile3 {
+    position: relative;
+    top: 300rem;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+    margin-bottom: 1rem;
+    text-align: left; /* ou center, se preferir centralizado */
+
+}
+
+/*Efeito do final da pagina */
+.wave-sobre {
+    position: fixed;
+    left: 0;
+    bottom: 0; /* alterado de -10rem para 0 */
+    width: 100%;
+    height: 12rem; /* aumente se quiser uma onda mais visível */
+    background: red;
+    opacity: 0.7;
+    border-radius: 100%;
+    animation: wave 8s infinite linear;
+    transform-origin: center;
+    z-index: 0;
+    margin-top: 0;
+}
+
+.btn-voltarsobre {
+    position: absolute;
+    top: 1.5rem;
+    left: 90%;
+    color: black;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    border: none;
+}
+
+
+/*Container de eventos */
+
+
+.container-eventos {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 120%;
+    height: auto;
+    overflow-x: hidden; 
+    z-index: 1;
+background: linear-gradient(90deg, rgb(246, 244, 244), white, rgb(246, 244, 244));
+    background-size: 400% 400%;
+    animation: eventos-gradient 12s ease-in-out infinite;
+}
+
+@keyframes eventos-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.circle-logoeventos {
+    position: relative;
+    top: 2rem;
+    left: 2%;
+    z-index: 999;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 0.2rem solid red    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoeventos {
+    position: relative;
+    left: 0;
+    z-index: 999;
+    width: 13rem;
+    height: 13em;
+    
+}
+
+/*titulo da pagina */ 
+.title-eventos {
+    position: relative;
+    top: -10rem;
+    left: 27.5%;
+    font-size: 4rem;
+    color: #ff0000;
+    font-family: "Outfit", sans-serif;
+    background: linear-gradient(90deg, #ff0000, #1d3595, #2dce25);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    display: inline-block;
+    animation: gradient-move 35s linear infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.frame-option {
+    position: relative;
+    top: -10rem;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 30rem;
+    background: linear-gradient(90deg, rgb(229, 223, 223), #fe5353);
+    border-radius: 0.5rem;
+    border: 0.07rem solid black;
+    background-size: 200% 100%;
+    animation: gradient-move 60s linear infinite;
+    display: flex;             /* garante centralização */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* overlay que tapa apenas o quadro .frame-option */
+.frame-option {
+	position: relative; /* já presente, garante referência para overlay absoluta */
+}
+
+/* overlay absoluta dentro do quadro */
+.frame-option .frame-overlay {
+	position: absolute;
+	inset: 0; /* top:0; right:0; bottom:0; left:0; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(20,20,20,0.72); /* sombreia o quadro */
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 0.5rem; /* coincide com o frame */
+	z-index: 5; /* acima do conteúdo do quadro */
+	pointer-events: auto; /* bloqueia interação com o que estiver dentro do quadro */
+	box-sizing: border-box;
+	padding: 1rem;
+}
+
+/* conteúdo central da overlay */
+.frame-option .frame-overlay .overlay-content {
+	text-align: center;
+	color: #ffffff;
+	max-width: 90%;
+}
+
+/* título dentro do quadro */
+.frame-option .frame-overlay .overlay-content h2 {
+	margin: 0 0 1rem 0;
+	font-family: "Outfit", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+
+/* loader de três bolinhas (estilo igual ao usado em outras overlays) */
+.frame-option .frame-overlay .loader-dots {
+	display: inline-flex;
+	gap: 0.6rem;
+	align-items: flex-end;
+	height: 1.6rem;
+	margin-top: 0.5rem;
+}
+.frame-option .frame-overlay .loader-dots span {
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	background: #ffffff;
+	border-radius: 50%;
+	transform: translateY(0);
+	animation: dot-bounce 1s infinite ease-in-out;
+	box-shadow: 0 0 8px rgba(255,255,255,0.08);
+}
+.frame-option .frame-overlay .loader-dots span:nth-child(2) { animation-delay: 0.15s; }
+.frame-option .frame-overlay .loader-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+/* reutiliza a keyframe já presente (se já existir); caso não exista, adiciona isto */
+@keyframes dot-bounce {
+	0%, 100% { transform: translateY(0); opacity: 0.9; }
+	50%     { transform: translateY(-12px); opacity: 1; }
+}
+
+.btn-voltareventos {
+    position: absolute;
+    top: 3rem;
+    left: 88%;
+    color: black;
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    border: none;
+}
+#img-relson {
+    position: absolute;
+    top: 29%;
+    left: 4%;
+    width: 16.5rem;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    margin: 2rem auto;
+    z-index: 10;
+}
+
+/*Container de Utilidade*/
+.apagao{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20,20,20,0.92); /* escurece e tapa o que está por trás */
+    z-index: 10000; /* suficiente para ficar acima do conteúdo */
+    /* opacity: 100%;  remover - use rgba para controle de transparência */
+    pointer-events: auto; /* bloquear interação com o conteúdo por trás */
+    display: flex;               /* centraliza o conteúdo */
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+/* conteúdo central dentro do apagão */
+.apagao .overlay-content {
+    text-align: center;
+    color: #ffffff;
+    max-width: 90%;
+}
+
+/* título */
+.apagao .overlay-content h2 {
+    margin: 0 0 1rem 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* loader de três bolinhas */
+.apagao .loader-dots {
+    display: inline-flex;
+    gap: 0.6rem;
+    align-items: flex-end;
+    height: 1.6rem;
+    margin-top: 0.5rem;
+}
+.apagao .loader-dots span {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translateY(0);
+    animation: dot-bounce 1s infinite ease-in-out;
+    box-shadow: 0 0 8px rgba(255,255,255,0.08);
+}
+.apagao .loader-dots span:nth-child(2) { animation-delay: 0.15s; }
+.apagao .loader-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes dot-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50%     { transform: translateY(-12px); opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+

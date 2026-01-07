@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritório e Agência Portal Lagoinha</title>
+    <link rel="stylesheet" href="post2.css">
+    <link rel="icon" href="img/Logo base.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Arimo:ital,wght@0,400..700;1,400..700&family=BBH+Bogle&family=Bebas+Neue&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="img-post2/faixa.jpg" alt="imagem de fundo " class="img-fundo">
+    <div class="container">
+      <h1 class="title">Escritório e Agência Portal Lagoinha.</h1>
+      <h2 class="subtitle">Localizada em "Praça Benedito Afonso de Campos, 05, Centro - Lagoinha/SP.</h2>
+      <div class="post-row">
+        <img src="img-post2/escritorio.jpeg" alt="escritorio" class="escritorio">
+        <div class="post-text">
+          <p class="text">O Escritório e Agência do Portal Lagoinha está estrategicamente localizado na Praça Benedito Afonso de Campos, número 05, no coração do Centro de Lagoinha, São Paulo. Este local centralizado facilita o acesso tanto para os moradores locais quanto para visitantes que desejam conhecer mais sobre a cidade e seus eventos.</p>
+
+          <p class="text">O escritório serve como a base operacional do Portal Lagoinha, onde nossa equipe dedicada trabalha para coletar, organizar e divulgar informações relevantes sobre a cidade e o vale do paraiba. É aqui que planejamos nossas estratégias de comunicação, coordenamos eventos e colaboramos com parceiros locais para promover o desenvolvimento da comunidade.</p>
+
+          <p class="text">A agência também atua como um ponto de contato para empresas e organizações que desejam anunciar seus produtos e serviços no portal. Oferecemos soluções personalizadas de marketing digital para ajudar nossos parceiros a alcançar seu público-alvo de maneira eficaz.</p>
+        </div>
+      </div>
+
+      <div class="post-below">
+        <p class="text">Além disso, o escritório é um espaço aberto para a comunidade. Incentivamos os moradores a visitarem-nos para compartilhar suas histórias, eventos e sugestões. Estamos sempre dispostos a ouvir e colaborar com aqueles que desejam contribuir para o crescimento e fortalecimento de Lagoinha.</p>
+
+        <p class="text">Nosso trabalho é desenvolvimento com carinho e empatia com você cidadão!</p>
+      </div>
+      <img src="img-post2/familia.jpeg" alt="familia" class="family">
+      <h2 class="title2">A Força do Portal Lagoinha: Colaboração, Compromisso e Cuidado Comunitário.</h2>
+      <p class="text2">O Portal Lagoinha transcende a definição convencional de um veículo de comunicação; é um organismo vivo, nutrido pela paixão e dedicação de cada membro de nossa equipe e, fundamentalmente, pela colaboração da nossa comunidade. Acreditamos que a abrangência e a qualidade de nossos serviços residem não apenas no profissionalismo técnico, mas no genuíno amor ao próximo e no compromisso inabalável com o bem‑estar de nossa cidade e região.</p>
+      <h3 class="subtitle3">Nossa Missão em Ação:</h3>
+      <div class="post-below">
+        <p class="text3"><strong>Participação Ativa:</strong> Cobrimos e nos engajamos em eventos locais, reuniões estratégicas e diversas atividades comunitárias.</p>
+        <p class="text3"><strong>Fortalecimento de Laços:</strong> Buscamos incessantemente fortalecer os vínculos entre os moradores, cultivando um ambiente propício à colaboração e ao crescimento mútuo.</p>
+        <p class="text3"><strong>Disponibilidade Integral:</strong> Nosso compromisso com a população é contínuo — com disponibilidade de serviço de segunda a segunda — garantindo que a informação e o apoio nunca cessem.</p>
+        <p class="text3">É, para todos nós, um imenso privilégio servir à comunidade da Lagoinha. Reiteramos nosso compromisso com a excelência, sempre pautados pela ética, transparência e, acima de tudo, pela dedicação ao nosso público. Juntos, construímos uma comunidade mais forte e conectada.</p>
+      </div>
+      <video src="img-post2/relson.mp4" id="vid-relso" muted playsinline preload="auto"></video>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const v = document.getElementById('vid-relso');
+          if (!v) return;
+          v.muted = true;
+          v.playsInline = true;
+          v.play().catch(() => {});
+          setInterval(function () {
+            try {
+              v.currentTime = 0;
+              v.play().catch(() => {});
+            } catch (e) {}
+          }, 14000);
+        });
+      </script>
+    </div>
+</body>
+</html>
